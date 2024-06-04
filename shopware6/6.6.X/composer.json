@@ -1,82 +1,69 @@
 {
-  "license": "proprietary",
-  "type": "project",
-  "require":
-  {
-    "composer-runtime-api": "^2.0",
-    "shopware/administration": "6.6.0.0",
-    "shopware/core": "6.6.0.0",
-    "shopware/elasticsearch": "6.6.0.0",
-    "shopware/storefront": "6.6.0.0",
-    "symfony/flex": "~2"
-  },
-    "repositories": {
-        "shopware-packages": {
-      "type": "composer",
-      "url": "https://packages.shopware.com"
-    },
-        "0": {
-            "type": "path",
-            "url": "custom/plugins/*/packages/*",
-            "options": {
-                "symlink": true
-            }
-        },
-        "1": {
-            "type": "path",
-            "url": "custom/static-plugins/*",
-            "options": {
-                "symlink": true
-            }
-        },
-        "2": {
-            "type": "path",
-            "url": "custom/plugins/*",
-            "options": {
-                "symlink": true
-            }
-        }
-    },
-  "minimum-stability": "stable",
-  "prefer-stable": true,
-  "config":
-  {
-    "allow-plugins":
-    {
-      "symfony/flex": true,
-      "symfony/runtime": true,
-      "php-http/discovery": true
-    },
-    "optimize-autoloader": true,
-    "sort-packages": true
-  },
-  "scripts":
-  {
-    "auto-scripts": {
-      "assets:install": "symfony-cmd"
-    },
-    "post-install-cmd":
-    [
-      "@auto-scripts"
-    ],
-    "post-update-cmd":
-    [
-      "@auto-scripts"
-    ]
-  },
-  "extra":
-  {
-    "symfony":
-    {
-      "allow-contrib": true,
-      "endpoint":
-      [
-        "https://raw.githubusercontent.com/shopware/recipes/flex/main/index.json",
-        "flex://defaults"
+   "license":"proprietary",
+   "type":"project",
+   "require":{
+      "composer-runtime-api":"^2.0",
+      "shopware/administration":"6.6.0.0",
+      "shopware/core":"6.6.0.0",
+      "shopware/elasticsearch":"6.6.0.0",
+      "shopware/storefront":"6.6.0.0",
+      "symfony/flex":"~2"
+   },
+   "repositories":{
+      "0":{
+         "type":"path",
+         "url":"custom/plugins/*/packages/*",
+         "options":{
+            "symlink":true
+         }
+      },
+      "1":{
+         "type":"path",
+         "url":"custom/static-plugins/*",
+         "options":{
+            "symlink":true
+         }
+      },
+      "2":{
+         "type":"path",
+         "url":"custom/plugins/*",
+         "options":{
+            "symlink":true
+         }
+      }
+   },
+   "minimum-stability":"stable",
+   "prefer-stable":true,
+   "config":{
+      "allow-plugins":{
+         "symfony/flex":true,
+         "symfony/runtime":true,
+         "php-http/discovery":true
+      },
+      "optimize-autoloader":true,
+      "sort-packages":true
+   },
+   "scripts":{
+      "auto-scripts":{
+         "assets:install":"symfony-cmd"
+      },
+      "post-install-cmd":[
+         "@auto-scripts"
+      ],
+      "post-update-cmd":[
+         "@auto-scripts"
       ]
-    }
-  },
-  "require-dev": {
-    "symfony/web-profiler-bundle": "^7.0"
-  }
+   },
+   "extra":{
+      "symfony":{
+         "allow-contrib":true,
+         "endpoint":[
+            "https://raw.githubusercontent.com/shopware/recipes/flex/main/index.json",
+            "flex://defaults"
+         ]
+      }
+   },
+   "require-dev":{
+      "symfony/web-profiler-bundle":"^7.0"
+   }
 }
